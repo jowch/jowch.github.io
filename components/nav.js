@@ -4,7 +4,7 @@ import { faGithub, faLinkedinIn, faTwitter } from '@fortawesome/free-brands-svg-
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 const IconLink = ({ children, icon, ...props }) => (
-  <a {...props} className='inline-block relative p-1 m-[-4px] hover:border-b-2 hover:text-blue-900'>
+  <a {...props} className='inline-block relative p-1 m-[-4px] hover:border-b-2 hover:text-sky-900'>
     <FontAwesomeIcon icon={icon} size='sm' />
   </a>
 )
@@ -14,7 +14,7 @@ export default function Nav() {
     <nav className='mb-4 border-b-2 p-3'>
       <div className='max-w-screen-md mx-auto'>
         <Link href="/">
-          <a className='text-xl hover:border-b-2 hover:text-blue-900'>Jonathan Chen</a>
+          <a className='text-xl hover:border-b-2 hover:text-sky-900'>Jonathan Chen</a>
         </Link>
         <div className='float-right text-lg space-x-2'>
           <IconLink href='mailto:jwhc@ucla.edu' title='Email' icon={faEnvelope} />
