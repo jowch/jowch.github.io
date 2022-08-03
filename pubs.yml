@@ -1,4 +1,29 @@
 - doi: 10.1073/pnas.2112226119
+  title: Broadcasting of amplitude- and frequency-modulated c-di-GMP signals
+    facilitates cooperative surface commitment in bacterial lineages
+  publisher: Proceedings of the National Academy of Sciences
+  authors:
+    - orcid: http://orcid.org/0000-0001-6789-0317
+      name: Calvin K. Lee
+      first: true
+    - orcid: http://orcid.org/0000-0001-9780-9495
+      name: William C. Schmidt
+      first: false
+    - orcid: http://orcid.org/0000-0001-7900-8758
+      name: Shanice S. Webster
+      first: false
+    - orcid: http://orcid.org/0000-0001-5283-243X
+      name: Jonathan W. Chen
+      first: false
+    - orcid: ""
+      name: George A. O’Toole
+      first: false
+    - orcid: http://orcid.org/0000-0003-0893-6383
+      name: Gerard C. L. Wong
+      first: false
+  URL: http://dx.doi.org/10.1073/pnas.2112226119
+  published: January, 2022
+  checked: true
 - doi: https://doi.org/10.7936/tabn-yr37
   title: A Generalized Gaussian Process Likelihood for Psychometric Function
     Estimation
