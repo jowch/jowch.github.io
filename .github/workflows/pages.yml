@@ -97,6 +97,9 @@ jobs:
           git add pubs.yml
           git commit -am "Updated publications index"
           git push
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
