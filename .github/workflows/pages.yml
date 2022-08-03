@@ -30,6 +30,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          persist-credentials: false
       - name: Detect package manager
         id: detect-package-manager
         run: |
@@ -81,26 +83,24 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./out
-
       - name: Verify Changed files
         uses: tj-actions/verify-changed-files@v10.1
         id: verify-changed-files
         with:
           files: |
               pubs.yml
-
       - name: Commit Updated Pubs
         if: steps.verify-changed-files.outputs.files_changed == 'true'
         run: |
           git config --global user.name 'Jonathan Chen'
           git config --global user.email 'jowch@users.noreply.github.com'
           git add pubs.yml
-          git commit -am "Updated publications index"
-
+          git commit -m "Updated publications index"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
 
   # Deployment job
   deploy:
