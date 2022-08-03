@@ -1,28 +1,41 @@
 import Markdown from 'markdown-to-jsx'
 import NormalLink from '../components/link'
 
+const Header = ({children}) =>
+  <h1 className='font-sans text-xl pb-2'>{children}</h1>
 
-export default function Section({ children }) {
+const Paragraph = ({children}) =>
+  <p className='text-base max-w-prose mb-2'>{children}</p>
+
+export default function Section({ md, heading, children }) {
   return (
     <section className='font-serif'>
-      <Markdown
-        children={children}
-        options={{
-          overrides: {
-            h1: {
-              component: ({children}) => <h1 className='font-sans text-xl'>{children}</h1>
-            },
-            a: {
-              component: NormalLink
-            },
-            p: {
-              component: ({children}) => <p className='text-base max-w-prose my-2'>{children}</p>
+      {(typeof md !== 'undefined') ?
+        <Markdown
+          children={md}
+          options={{
+            overrides: {
+              h1: {
+                component: Header
+              },
+              a: {
+                component: NormalLink
+              },
+              p: {
+                component: Paragraph
+              },
+              ul: {
+
+              }
             }
-          }
-        }}
-      >
-        {children}
-      </Markdown>
+          }}
+        />
+      :
+        <div>
+          {(typeof heading !== 'undefined') && <Header>{heading}</Header>}
+          {children}
+        </div>
+      }
     </section>
   )
 }

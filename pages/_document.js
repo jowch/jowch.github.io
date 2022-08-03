@@ -10,7 +10,7 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
           <link
-            href="https://api.fontshare.com/css?f[]=erode@400&display=swap"
+            href="https://api.fontshare.com/css?f[]=erode@400,500,600&display=swap"
             rel="stylesheet"
           />
         </Head>

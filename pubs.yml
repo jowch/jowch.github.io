@@ -22,9 +22,16 @@
       name: Gerard C. L. Wong
       first: false
   URL: http://dx.doi.org/10.1073/pnas.2112226119
-  published: January, 2022
+  published: 2022
   checked: true
-- doi: https://doi.org/10.7936/tabn-yr37
+- doi: 10.7936/tabn-yr37
   title: A Generalized Gaussian Process Likelihood for Psychometric Function
     Estimation
+  publisher: Washington University in St. Louis
+  authors:
+    - orcid: http://orcid.org/0000-0001-5283-243X
+      name: Jonathan W. Chen
+      first: true
+  URL: https://doi.org/10.7936/tabn-yr37
+  published: 2020
   donotcheck: true

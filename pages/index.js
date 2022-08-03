@@ -5,6 +5,7 @@ import { loadIndex } from '../lib/pubs'
 import path from 'path' 
 
 import Section from '../components/section'
+import Pub from '../components/pub'
 import headshot from '../public/images/headshot.jpg'
 
 const about = `
@@ -52,16 +53,16 @@ export default function HomePage({ pubs }) {
           </figcaption>
         </figure>
         <div className='h-8 sm:w-10'/>
-        <div className='min-w-[200px]'>
-          <Section>{about}</Section>
-
-          {/* Projects */}
-          <Section>{projects}</Section>
-
-          {/* Publications */}
-          {pubs.map((pub, i) => (
-            <p key={i}>{JSON.stringify(pub)}</p>
-          ))}
+        <div className='min-w-[200px] space-y-8'>
+          <Section md={about} />
+          <Section md={projects} />
+          <Section heading="Publications">
+            <div className='space-y-4'>
+              {pubs.map((pub, i) => (
+                <Pub key={`pub-${i}`} pub={pub} />
+              ))}
+            </div>
+          </Section>
         </div>
       </article>
     </main>
