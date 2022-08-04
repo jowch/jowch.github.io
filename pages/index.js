@@ -12,8 +12,10 @@ const about = `
 # About
 
 I'm a PhD student at [UCLA](https://www.ucla.edu/) studying with [Gerard
-Wong](https://samueli.ucla.edu/people/gerard-wong/). I am interested in applying
-langauge models like AlphaFold to study peptides.
+Wong](https://samueli.ucla.edu/people/gerard-wong/). My research applies modern
+ML methods to studying the properties and interactions of peptides with the goal
+of finding sequences with optimal properties for use cases like drug
+development!
 
 I'm also a [Julia](https://julialang.org) enthusiast!
 
@@ -32,11 +34,11 @@ const projects = `
 
 export default function HomePage({ pubs }) {
   return (
-    <main className='container mx-auto'>
+    <main>
       <Head>
         <title>Jonathan Chen</title>
       </Head>
-      <article className='flex flex-col px-[50px] sm:flex-row items-center sm:items-start sm:justify-between sm:max-w-fit sm:mx-auto'>
+      <article className='flex flex-col px-[50px] pb-[50px] sm:flex-row items-center sm:items-start sm:justify-between sm:max-w-fit sm:mx-auto'>
         <figure className='float-left max-w-[150px]'>
           <Image
             src={headshot}
