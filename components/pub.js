@@ -10,16 +10,18 @@ export default function Pub({ pub, ...props }) {
   const { authors, title, publisher, published: year, URL } = pub
 
   return (
-    <div {...props} className="max-w-prose">
+    <div {...props} className="max-w-prose space-y-1">
       <h2 className="text-base font-medium">{title}</h2>
-      {authors.map(({ name }, i) => (
-        <span
-          key={`${props.key}-author-${i}`}
-          className={ME.has(name) && "font-semibold"}
-        >
-          {name}{i != authors.length - 1 && ", "}
-        </span>
-      ))}
+      <div>
+        {authors.map(({ name }, i) => (
+          <span
+            key={`${props.key}-author-${i}`}
+            className={ME.has(name) && "font-semibold"}
+          >
+            {name}{i != authors.length - 1 && ", "}
+          </span>
+        ))}
+      </div>
       <div>
         <span className="italic">{publisher}, {year}</span>
       </div>

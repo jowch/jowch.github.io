@@ -14,7 +14,8 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
         </Head>
-        <body>
+        {/* dark:text-white */}
+        <body className='bg-white dark:bg-[#111517] dark:text-[#e8e6e3]'>
           <Main />
           <NextScript />
         </body>

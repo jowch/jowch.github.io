@@ -7,32 +7,9 @@ import path from 'path'
 import Section from '../components/section'
 import Pub from '../components/pub'
 import headshot from '../public/images/headshot.jpg'
+import { promises as fs } from 'fs'
 
-const about = `
-# About
-
-I'm a PhD student at [UCLA](https://www.ucla.edu/) studying with [Gerard
-Wong](https://samueli.ucla.edu/people/gerard-wong/). My research applies modern
-ML methods to studying the properties and interactions of peptides with the goal
-of finding sequences with optimal properties for use cases like drug
-development!
-
-I'm also a [Julia](https://julialang.org) enthusiast!
-
-Previously, I studied [Computer Science](https://cse.wustl.edu) and
-[Biology](https://biology.wustl.edu) at [Washington University in St.
-Louis](https://wustl.edu/), ultimately receiving BS and MS degrees.
-`
-
-const projects = `
-# Projects
-
-- Feature Extraction
-- Neural Network Kernel Functions
-- Peptide Drug Design and Optimization
-`
-
-export default function HomePage({ pubs }) {
+export default function HomePage({ about, pubs }) {
   return (
     <main>
       <Head>
@@ -44,6 +21,7 @@ export default function HomePage({ pubs }) {
             src={headshot}
             layout='intrinsic'
             placeholder='blur'
+            className='dark:brightness-[.85]'
           /> 
           <figcaption className='font-serif text-base'>
             PhD Student, UCLA Bioengineering
@@ -57,7 +35,6 @@ export default function HomePage({ pubs }) {
         <div className='h-8 sm:w-10'/>
         <div className='min-w-[200px] space-y-8'>
           <Section md={about} />
-          <Section md={projects} />
           <Section heading="Publications">
             <div className='space-y-4'>
               {pubs.map((pub, i) => (
@@ -73,9 +50,11 @@ export default function HomePage({ pubs }) {
 
 export async function getStaticProps(context) {
   let pubs = await loadIndex(path.join(process.cwd(), 'pubs.yml'))
+  let about = await fs.readFile(path.join(process.cwd(), 'about.md'), 'utf8')
 
   return {
     props: {
+      about,
       pubs
     },
   }
