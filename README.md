@@ -1,5 +1,7 @@
 # [jowch.github.io](https://jowch.github.io)
 
+![Status](https://github.com/jowch/jowch.github.io/actions/workflows/pages.yml/badge.svg)
+
 This is my personal website. It was built with automation in mind. This is a
 static site is built with [Next.js](https://nextjs.org). The styles are built
 with [Tailwind CSS](https://tailwindcss.com). This combination results in a very
