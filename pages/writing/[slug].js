@@ -33,7 +33,8 @@ export default function Post({ post }) {
           children={content}
           options={{
             overrides: {
-              h1: { component: Heading, props: { level: 1 } },
+              // Page title is already h1; treat markdown # as h2 to avoid duplicate h1s.
+              h1: { component: Heading, props: { level: 2 } },
               h2: { component: Heading, props: { level: 2 } },
               h3: { component: Heading, props: { level: 3 } },
               a: { component: NormalLink },

@@ -10,7 +10,7 @@
     "dev": "next dev --webpack",
     "prebuild": "node lib/rss.js",
     "build": "next build --webpack",
-    "start": "next start"
+    "start": "npx serve out"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
