@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jonathan Chen</title>
+    <link>https://jowch.github.io</link>
+    <description>Writing by Jonathan Chen — essays, notes, and curiosities.</description>
+    <language>en-us</language>
+    <atom:link href="https://jowch.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>On Sequence Space</title>
+      <link>https://jowch.github.io/writing/on-sequence-space</link>
+      <guid>https://jowch.github.io/writing/on-sequence-space</guid>
+      <pubDate>Fri, 15 Mar 2024 00:00:00 GMT</pubDate>
+      <description>Biological sequence space is vast, nearly all of it unexplored. A few thoughts on what that means for how we look.</description>
+    </item>
+  </channel>
+</rss>
