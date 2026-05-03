@@ -40,8 +40,8 @@ export default function HomePage({ about, pubs, recentPosts }) {
       <Head>
         <title>Jonathan Chen</title>
       </Head>
-      <article className='flex flex-col px-[50px] pb-[50px] sm:flex-row items-center sm:items-start sm:justify-between sm:max-w-fit sm:mx-auto'>
-        <figure className='float-left max-w-[150px]'>
+      <article className='flex flex-col items-center px-[50px] pt-[30px] pb-[50px] max-w-(--breakpoint-md) mx-auto sm:flex-row sm:items-start'>
+        <figure className='shrink-0 max-w-[150px]'>
           <Image
             src={headshot}
             width={150}
