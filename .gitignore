@@ -111,3 +111,6 @@ out/
 
 # IDEA
 .idea
+
+# Generated at build time by lib/rss.js
+public/feed.xml
