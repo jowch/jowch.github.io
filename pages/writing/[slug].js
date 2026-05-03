@@ -57,6 +57,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const post = await getPostBySlug(params.slug)
+  if (!post) return { notFound: true }
   return {
     props: {
       post: {

@@ -14,7 +14,7 @@ export default function Writing({ grouped }) {
           if (!posts || posts.length === 0) return null
           return (
             <section key={cat} className="space-y-4">
-              <h1 className="font-sans text-xl">{CATEGORY_LABELS[cat]}</h1>
+              <h2 className="font-sans text-xl">{CATEGORY_LABELS[cat]}</h2>
               <div className="space-y-5">
                 {posts.map(post => (
                   <PostCard key={post.slug} post={post} />
