@@ -36,7 +36,7 @@ const steps = [
             {at(s.layer).map(p => (
               <a
                 href={`/projects/${p.id}/`}
-                class="inline-flex items-center gap-1.5 rounded-full border border-rule bg-paper px-2.5 py-0.5 font-mono text-xs hover:border-[var(--project)] hover:text-[var(--project)] transition-colors"
+                class="inline-flex items-center gap-1.5 rounded-full border border-rule bg-paper px-2.5 py-0.5 text-[0.8rem] font-medium hover:border-[var(--project)] hover:text-[var(--project)] transition-colors"
                 style={`--project: ${p.data.accent}`}
               >
                 <span class="size-1.5 rounded-full bg-[var(--project)]" />{p.data.name}

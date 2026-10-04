@@ -18,7 +18,7 @@ const related = all.filter(p => data.related.includes(p.id))
     <section class="relative overflow-hidden border-b border-rule">
       <div aria-hidden="true" class="absolute inset-0 opacity-[0.08] bg-[radial-gradient(60%_80%_at_85%_10%,var(--project),transparent)]"></div>
       <div class="relative mx-auto max-w-5xl px-4 sm:px-6 pt-12 pb-12">
-        <a href="/projects/" class="font-mono text-xs text-ink-3 hover:text-ink">← All projects</a>
+        <a href="/projects/" class="text-sm text-ink-3 hover:text-ink">← All projects</a>
         <div class="mt-8 grid gap-10 md:grid-cols-[1fr_auto] md:items-center">
           <div>
             <div class="flex items-center gap-4">
@@ -32,7 +32,7 @@ const related = all.filter(p => data.related.includes(p.id))
               )}
               <div>
                 <h1 class="display text-4xl sm:text-5xl font-semibold leading-none">{data.name}</h1>
-                <p class="mt-2 font-mono text-xs uppercase tracking-wider text-ink-3">{data.language} · {data.status}</p>
+                <p class="mt-2 text-[0.72rem] font-semibold uppercase tracking-wider text-ink-3">{data.language} · {data.status}</p>
               </div>
             </div>
             <p class="display mt-6 text-2xl sm:text-3xl leading-snug max-w-2xl">{data.tagline}</p>
@@ -45,7 +45,7 @@ const related = all.filter(p => data.related.includes(p.id))
           </div>
           <div class="w-full md:w-[22rem] rounded-xl border border-rule bg-paper shadow-[0_10px_30px_-18px_var(--project)] overflow-hidden">
             <div class="flex items-center justify-between px-4 py-2 border-b border-rule bg-paper-2">
-              <span class="font-mono text-[0.7rem] uppercase tracking-wider text-ink-3">{data.install.label}</span>
+              <span class="text-[0.72rem] font-semibold uppercase tracking-wider text-ink-3">{data.install.label}</span>
               <span class="size-2 rounded-full bg-[var(--project)]" aria-hidden="true"></span>
             </div>
             <pre class="px-4 py-3 font-mono text-[0.8rem] leading-relaxed overflow-x-auto"><code>{data.install.code.trim()}</code></pre>

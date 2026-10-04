@@ -18,7 +18,7 @@ const { id, data } = project
     {data.logoDark && <img src={data.logoDark} alt="" width="36" height="36" class="size-9 object-contain hidden dark:block" />}
     <div>
       <h3 class="display text-xl font-semibold leading-tight">{data.name}</h3>
-      <p class="font-mono text-[0.7rem] uppercase tracking-wider text-ink-3">{data.language}</p>
+      <p class="text-[0.72rem] font-semibold uppercase tracking-wider text-ink-3">{data.language}</p>
     </div>
   </div>
   {compact ? (
@@ -27,7 +27,7 @@ const { id, data } = project
     <>
       <p class="font-medium leading-snug">{data.tagline}</p>
       <p class="text-[0.95rem] text-ink-2">{data.summary}</p>
-      <span class="mt-auto pt-1 font-mono text-xs text-[var(--project)] group-hover:underline underline-offset-4">Read more →</span>
+      <span class="mt-auto pt-1 text-sm font-medium text-[var(--project)] group-hover:underline underline-offset-4">Read more →</span>
     </>
   )}
 </a>

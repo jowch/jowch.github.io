@@ -46,7 +46,7 @@ const links = [
           {links.map(l => <a href={l.href} class="link text-sm font-medium">{l.label}</a>)}
         </div>
       </div>
-      <figure class="relative mx-auto md:mx-0 w-44 sm:w-52">
+      <figure class="relative hidden md:block w-52">
         <div aria-hidden="true" class="absolute inset-0 translate-x-3 translate-y-3 rounded-2xl border-2 border-accent/50"></div>
         <Image
           src={headshot}

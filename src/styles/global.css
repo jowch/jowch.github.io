@@ -95,9 +95,10 @@
     letter-spacing: -0.012em;
   }
   .eyebrow {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--ink-3);
   }
