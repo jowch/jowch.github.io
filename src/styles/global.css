@@ -1,19 +1,16 @@
 @import 'tailwindcss';
-@import '@fontsource-variable/newsreader/opsz.css';
-@import '@fontsource-variable/newsreader/opsz-italic.css';
-@import '@fontsource/ibm-plex-sans/400.css';
-@import '@fontsource/ibm-plex-sans/400-italic.css';
-@import '@fontsource/ibm-plex-sans/500.css';
-@import '@fontsource/ibm-plex-sans/600.css';
-@import '@fontsource/ibm-plex-mono/400.css';
-@import '@fontsource/ibm-plex-mono/500.css';
+@import '@fontsource-variable/source-serif-4/opsz.css';
+@import '@fontsource-variable/source-serif-4/opsz-italic.css';
+@import '@fontsource-variable/source-sans-3/wght.css';
+@import '@fontsource-variable/source-sans-3/wght-italic.css';
+@import '@fontsource-variable/source-code-pro/wght.css';
 
 @custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
 
 @theme {
-  --font-display: 'Newsreader Variable', ui-serif, Georgia, serif;
-  --font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
-  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+  --font-display: 'Source Serif 4 Variable', ui-serif, Georgia, serif;
+  --font-sans: 'Source Sans 3 Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Source Code Pro Variable', ui-monospace, SFMono-Regular, monospace;
 
   --color-paper: var(--paper);
   --color-paper-2: var(--paper-2);
@@ -77,8 +74,8 @@
     background-image: radial-gradient(var(--dot) 1px, transparent 1px);
     background-size: 22px 22px;
     font-family: var(--font-sans);
-    font-size: 1.0625rem;
-    line-height: 1.65;
+    font-size: 1.125rem;
+    line-height: 1.6;
     text-rendering: optimizeLegibility;
   }
   ::selection {
