@@ -1,3 +1,281 @@
+- doi: 10.1073/pnas.2521841122
+  title: SARS-CoV-2 peptide fragments selectively dysregulate specific immune cell
+    populations via Gaussian curvature targeting
+  publisher: Proceedings of the National Academy of Sciences
+  authors:
+    - orcid: https://orcid.org/0000-0001-7822-8716
+      name: Yue Zhang
+      first: true
+      corresponding: true
+    - orcid: ""
+      name: Carlos Silvestre-Roig
+      first: false
+      equal: true
+    - orcid: ""
+      name: Han Fu
+      first: false
+      equal: true
+    - orcid: ""
+      name: Haleh Alimohamadi
+      first: false
+      equal: true
+    - orcid: ""
+      name: Taraknath Mandal
+      first: false
+    - orcid: https://orcid.org/0000-0001-5283-243X
+      name: Jonathan W. Chen
+      first: false
+    - orcid: ""
+      name: Elizabeth Wei-Chia Luo
+      first: false
+    - orcid: https://orcid.org/0000-0003-2129-0775
+      name: Jaime de Anda
+      first: false
+    - orcid: https://orcid.org/0000-0001-7174-3504
+      name: Anna Lívia Linard Matos
+      first: false
+    - orcid: ""
+      name: Mathis Richter
+      first: false
+    - orcid: ""
+      name: Anna Mennella
+      first: false
+    - orcid: ""
+      name: HongKyu Lee
+      first: false
+    - orcid: https://orcid.org/0000-0003-2567-4418
+      name: Liana C. Chan
+      first: false
+    - orcid: https://orcid.org/0000-0001-5532-3454
+      name: Yingrui Wang
+      first: false
+    - orcid: ""
+      name: Naixin Wang
+      first: false
+    - orcid: ""
+      name: Hongyu Wang
+      first: false
+    - orcid: ""
+      name: Xiaohan Wang
+      first: false
+    - orcid: https://orcid.org/0000-0001-6789-0317
+      name: Calvin K. Lee
+      first: false
+    - orcid: ""
+      name: Susmita Ghosh
+      first: false
+    - orcid: ""
+      name: Tsutomu Matsui
+      first: false
+    - orcid: ""
+      name: Thomas M. Weiss
+      first: false
+    - orcid: https://orcid.org/0000-0003-3869-7651
+      name: Tiannan Guo
+      first: false
+    - orcid: ""
+      name: Maomao Zhang
+      first: false
+    - orcid: ""
+      name: Dapeng Li
+      first: false
+    - orcid: https://orcid.org/0000-0003-4534-6470
+      name: Matthew C. Wolfgang
+      first: false
+    - orcid: ""
+      name: Robert S. Hagan
+      first: false
+    - orcid: ""
+      name: Melody M. H. Li
+      first: false
+    - orcid: ""
+      name: Matthias Gunzer
+      first: false
+    - orcid: ""
+      name: Albert Sickmann
+      first: false
+    - orcid: ""
+      name: Loredana Frasca
+      first: false
+    - orcid: https://orcid.org/0000-0002-9468-5252
+      name: Michael R. Yeaman
+      first: false
+    - orcid: ""
+      name: Roberto Lande
+      first: false
+    - orcid: https://orcid.org/0000-0001-6214-5211
+      name: Qiang Cui
+      first: false
+    - orcid: ""
+      name: Oliver Soehnlein
+      first: false
+    - orcid: https://orcid.org/0000-0003-0893-6383
+      name: Gerard C. L. Wong
+      first: false
+      corresponding: true
+  URL: https://doi.org/10.1073/pnas.2521841122
+  published: 2026
+  checked: true
+- doi: 10.1038/s41564-025-02087-4
+  title: Pseudomonas aeruginosa senses exopolysaccharide trails using type IV pili
+    and adhesins during biofilm formation
+  publisher: Nature Microbiology
+  authors:
+    - orcid: https://orcid.org/0000-0001-9780-9495
+      name: William C. Schmidt
+      first: true
+    - orcid: https://orcid.org/0000-0001-6789-0317
+      name: Calvin K. Lee
+      first: false
+    - orcid: ""
+      name: Xuhui Zheng
+      first: false
+    - orcid: https://orcid.org/0000-0001-5283-243X
+      name: Jonathan W. Chen
+      first: false
+    - orcid: ""
+      name: Kirsten L. Fetah
+      first: false
+    - orcid: https://orcid.org/0009-0007-9666-9321
+      name: James R. Popoli
+      first: false
+    - orcid: https://orcid.org/0009-0001-9684-4368
+      name: Yun Su Choi
+      first: false
+    - orcid: https://orcid.org/0000-0002-3234-7418
+      name: Thomas D. Young
+      first: false
+    - orcid: https://orcid.org/0000-0001-5527-6248
+      name: Paul S. Weiss
+      first: false
+    - orcid: ""
+      name: Andrea M. Kasko
+      first: false
+    - orcid: https://orcid.org/0000-0002-2861-4392
+      name: George A. O’Toole
+      first: false
+    - orcid: https://orcid.org/0000-0003-2932-7966
+      name: Matthew R. Parsek
+      first: false
+    - orcid: https://orcid.org/0000-0003-0893-6383
+      name: Gerard C. L. Wong
+      first: false
+  URL: https://rdcu.be/eEl5n
+  published: 2025
+  checked: true
+- doi: 10.1073/pnas.2300644120
+  title: "Viral afterlife: SARS-CoV-2 as a reservoir of immunomimetic peptides
+    that reassemble into proinflammatory supramolecular complexes"
+  publisher: Proceedings of the National Academy of Sciences
+  authors:
+    - orcid: http://orcid.org/0000-0001-7822-8716
+      name: Yue Zhang
+      first: true
+    - orcid: ""
+      name: Vanthana Bharathi
+      first: false
+    - orcid: http://orcid.org/0000-0003-3678-6781
+      name: Tatsuya Dokoshi
+      first: false
+    - orcid: http://orcid.org/0000-0003-2129-0775
+      name: Jaime de Anda
+      first: false
+    - orcid: ""
+      name: Lauryn Tumey Ursery
+      first: false
+    - orcid: ""
+      name: Nikhil N. Kulkarni
+      first: false
+    - orcid: http://orcid.org/0000-0003-0166-2658
+      name: Yoshiyuki Nakamura
+      first: false
+    - orcid: ""
+      name: Jonathan Chen
+      first: false
+    - orcid: ""
+      name: Elizabeth W. C. Luo
+      first: false
+    - orcid: ""
+      name: Lamei Wang
+      first: false
+    - orcid: http://orcid.org/0000-0003-2145-2770
+      name: Hua Xu
+      first: false
+    - orcid: ""
+      name: Alison Coady
+      first: false
+    - orcid: ""
+      name: Raymond Zurich
+      first: false
+    - orcid: http://orcid.org/0000-0003-1613-9501
+      name: Michelle W. Lee
+      first: false
+    - orcid: ""
+      name: Tsutomu Matsui
+      first: false
+    - orcid: ""
+      name: HongKyu Lee
+      first: false
+    - orcid: http://orcid.org/0000-0003-2567-4418
+      name: Liana C. Chan
+      first: false
+    - orcid: ""
+      name: Athena A. Schepmoes
+      first: false
+    - orcid: ""
+      name: Mary S. Lipton
+      first: false
+    - orcid: ""
+      name: Rui Zhao
+      first: false
+    - orcid: ""
+      name: Joshua N. Adkins
+      first: false
+    - orcid: http://orcid.org/0000-0003-0478-8520
+      name: Geremy C. Clair
+      first: false
+    - orcid: ""
+      name: Lance R. Thurlow
+      first: false
+    - orcid: ""
+      name: Jonathan C. Schisler
+      first: false
+    - orcid: http://orcid.org/0000-0003-4534-6470
+      name: Matthew C. Wolfgang
+      first: false
+    - orcid: ""
+      name: Robert S. Hagan
+      first: false
+    - orcid: http://orcid.org/0000-0002-9468-5252
+      name: Michael R. Yeaman
+      first: false
+    - orcid: ""
+      name: Thomas M. Weiss
+      first: false
+    - orcid: ""
+      name: Xinhua Chen
+      first: false
+    - orcid: ""
+      name: Melody M. H. Li
+      first: false
+    - orcid: http://orcid.org/0000-0003-3847-0422
+      name: Victor Nizet
+      first: false
+    - orcid: http://orcid.org/0000-0001-5523-825X
+      name: Silvio Antoniak
+      first: false
+    - orcid: ""
+      name: Nigel Mackman
+      first: false
+    - orcid: ""
+      name: Richard L. Gallo
+      first: false
+    - orcid: http://orcid.org/0000-0003-0893-6383
+      name: Gerard C. L. Wong
+      first: false
+  URL: https://doi.org/10.1073/pnas.2300644120
+  published: 2024
+  checked: true
 - doi: 10.1073/pnas.2112226119
   title: Broadcasting of amplitude- and frequency-modulated c-di-GMP signals
     facilitates cooperative surface commitment in bacterial lineages
