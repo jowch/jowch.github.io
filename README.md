@@ -12,7 +12,7 @@ on every push to `main`.
 | To change | Edit |
 |---|---|
 | Research areas on the home page | [`src/data/research.yml`](src/data/research.yml) |
-| Publications | [`pubs.yml`](pubs.yml): add a `doi:` line, then `npm run pubs` |
+| Publications | [`pubs.yml`](pubs.yml): add a `doi:` line, then `npm run pubs`. Papers without a DOI can be written out in full (title, authors, publisher, published) |
 | CV page | [`src/data/cv.yml`](src/data/cv.yml) |
 | A project's landing page | [`src/content/projects/<name>.md`](src/content/projects) |
 | Colors and fonts | [`src/styles/global.css`](src/styles/global.css) |

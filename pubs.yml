@@ -313,3 +313,21 @@
   URL: https://doi.org/10.7936/tabn-yr37
   published: 2020
   donotcheck: true
+- title: Exploring Unfairness and Bias in Data
+  publisher: Proceedings of the AAAI Conference on Artificial Intelligence
+  authors:
+    - name: Jonathan W. Chen
+      first: true
+    - name: T. Larsen
+      first: false
+    - name: M. Neumann
+      first: false
+  published: 2020
+- title: Introduction to Python for Data Science
+  publisher: Proceedings of the AAAI Conference on Artificial Intelligence
+  authors:
+    - name: M. Neumann
+      first: true
+    - name: Jonathan W. Chen
+      first: false
+  published: 2019

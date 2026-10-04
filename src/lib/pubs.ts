@@ -3,11 +3,11 @@ import { parse } from 'yaml'
 
 export interface Author { name: string; orcid?: string; first?: boolean }
 export interface Pub {
-  doi: string
+  doi?: string
   title: string
   publisher?: string
   authors: Author[]
-  URL: string
+  URL?: string
   published: number
   selected?: boolean
 }

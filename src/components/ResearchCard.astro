@@ -8,7 +8,7 @@ interface Props {
   pubs: Pub[]
 }
 const { area, pubs } = Astro.props
-const related = pubs.filter(p => area.papers?.includes(p.doi))
+const related = pubs.filter(p => p.doi && area.papers?.includes(p.doi))
 const surname = (p: Pub) => p.authors[0]?.name.split(' ').at(-1)
 ---
 
