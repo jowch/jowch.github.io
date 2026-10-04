@@ -15,5 +15,11 @@ const { pub } = Astro.props
       </>
     ))}
   </p>
-  {pub.publisher && <p class="text-[0.95rem] italic text-ink-3 mt-0.5">{pub.publisher}</p>}
+  {(pub.publisher || pub.doi) && (
+    <p class="text-[0.95rem] text-ink-3 mt-0.5">
+      {pub.publisher && <span class="italic">{pub.publisher}</span>}
+      {pub.publisher && pub.doi && <span aria-hidden="true"> · </span>}
+      {pub.doi && <a class="link" href={`https://doi.org/${pub.doi}`}>doi:{pub.doi}</a>}
+    </p>
+  )}
 </article>
