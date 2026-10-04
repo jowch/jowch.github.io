@@ -19,7 +19,7 @@ const { pub } = Astro.props
     <p class="text-[0.95rem] text-ink-3 mt-0.5">
       {pub.publisher && <span class="italic">{pub.publisher}</span>}
       {pub.publisher && pub.doi && <span aria-hidden="true"> · </span>}
-      {pub.doi && <a class="link" href={`https://doi.org/${pub.doi}`}>doi:{pub.doi}</a>}
+      {pub.doi && <a class="link" href={`https://doi.org/${pub.doi}`}>Article</a>}
     </p>
   )}
 </article>
