@@ -4,7 +4,7 @@ interface Props { pub: Pub }
 const { pub } = Astro.props
 ---
 
-<article class="group grid grid-cols-[3.25rem_1fr] gap-x-4">
+<article class="group grid grid-cols-[3.25rem_1fr] gap-x-4 py-4 border-b border-rule">
   <div class="font-mono text-sm text-ink-3 pt-0.5">{pub.published}</div>
   <div>
     <h3 class="font-medium leading-snug">

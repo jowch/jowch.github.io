@@ -1,8 +1,10 @@
 ---
 import Social from './Social.astro'
+interface Props { flush?: boolean }
+const { flush = false } = Astro.props
 ---
 
-<footer class="mt-24 border-t border-rule">
+<footer class:list={[flush ? '' : 'mt-24 border-t border-rule']}>
   <div class="mx-auto max-w-5xl px-4 sm:px-6 py-8 flex flex-col sm:flex-row gap-4 sm:items-center justify-between text-sm text-ink-3">
     <p>© {new Date().getFullYear()} Jonathan Chen. Built with <a class="link" href="https://astro.build">Astro</a>; source on <a class="link" href="https://github.com/jowch/jowch.github.io">GitHub</a>.</p>
     <Social />

@@ -1,5 +1,6 @@
 @import 'tailwindcss';
-@import '@fontsource-variable/fraunces/full.css';
+@import '@fontsource-variable/newsreader/opsz.css';
+@import '@fontsource-variable/newsreader/opsz-italic.css';
 @import '@fontsource/ibm-plex-sans/400.css';
 @import '@fontsource/ibm-plex-sans/400-italic.css';
 @import '@fontsource/ibm-plex-sans/500.css';
@@ -10,7 +11,7 @@
 @custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
 
 @theme {
-  --font-display: 'Fraunces Variable', ui-serif, Georgia, serif;
+  --font-display: 'Newsreader Variable', ui-serif, Georgia, serif;
   --font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
 
@@ -94,8 +95,7 @@
 @layer components {
   .display {
     font-family: var(--font-display);
-    font-variation-settings: 'SOFT' 50, 'WONK' 1;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.012em;
   }
   .eyebrow {
     font-family: var(--font-mono);

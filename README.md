@@ -11,7 +11,7 @@ on every push to `main`.
 
 | To change | Edit |
 |---|---|
-| About text on the home page | [`src/data/about.md`](src/data/about.md) |
+| Research areas on the home page | [`src/data/research.yml`](src/data/research.yml) |
 | Publications | [`pubs.yml`](pubs.yml): add a `doi:` line, then `npm run pubs` |
 | CV page | [`src/data/cv.yml`](src/data/cv.yml) |
 | A project's landing page | [`src/content/projects/<name>.md`](src/content/projects) |

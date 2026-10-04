@@ -6,10 +6,12 @@ import Footer from '../components/Footer.astro'
 interface Props {
   title?: string
   description?: string
+  // The page ends in a full-width band, so the footer sits right under it
+  flushFooter?: boolean
 }
 
 const SITE = 'Jonathan Chen'
-const { title, description = 'Jonathan Chen: PhD student at UCLA studying innate immunity and early bacterial surface sensing, and building tools for reproducible, interactive science.' } = Astro.props
+const { title, flushFooter = false, description = 'Jonathan Chen: PhD student at UCLA studying innate immunity and early bacterial surface sensing, and building tools for reproducible, interactive science.' } = Astro.props
 const fullTitle = title ? `${title} · ${SITE}` : SITE
 ---
 
@@ -38,6 +40,6 @@ const fullTitle = title ? `${title} · ${SITE}` : SITE
     <main id="main" class="flex-1">
       <slot />
     </main>
-    <Footer />
+    <Footer flush={flushFooter} />
   </body>
 </html>

@@ -1,12 +1,16 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-interface Props { project: CollectionEntry<'projects'> }
-const { id, data } = Astro.props.project
+interface Props { project: CollectionEntry<'projects'>; compact?: boolean }
+const { project, compact = false } = Astro.props
+const { id, data } = project
 ---
 
 <a
   href={`/projects/${id}/`}
-  class="group relative flex flex-col gap-3 rounded-xl border border-rule bg-paper p-5 transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-12px_var(--project)] hover:border-[var(--project)]"
+  class:list={[
+    'group relative flex flex-col rounded-xl border border-rule bg-paper transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-12px_var(--project)] hover:border-[var(--project)]',
+    compact ? 'gap-2 p-4' : 'gap-3 p-5',
+  ]}
   style={`--project: ${data.accent}`}
 >
   <div class="flex items-center gap-3">
@@ -17,7 +21,13 @@ const { id, data } = Astro.props.project
       <p class="font-mono text-[0.7rem] uppercase tracking-wider text-ink-3">{data.language}</p>
     </div>
   </div>
-  <p class="font-medium leading-snug">{data.tagline}</p>
-  <p class="text-[0.95rem] text-ink-2">{data.summary}</p>
-  <span class="mt-auto pt-1 font-mono text-xs text-[var(--project)] group-hover:underline underline-offset-4">Read more →</span>
+  {compact ? (
+    <p class="text-[0.92rem] leading-snug text-ink-2">{data.tagline}</p>
+  ) : (
+    <>
+      <p class="font-medium leading-snug">{data.tagline}</p>
+      <p class="text-[0.95rem] text-ink-2">{data.summary}</p>
+      <span class="mt-auto pt-1 font-mono text-xs text-[var(--project)] group-hover:underline underline-offset-4">Read more →</span>
+    </>
+  )}
 </a>

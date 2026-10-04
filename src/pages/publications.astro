@@ -12,7 +12,7 @@ const pubs = await loadPubs()
     <p class="mt-4 text-ink-2">
       Also on <a class="link" href="https://orcid.org/0000-0001-5283-243X">ORCID</a>.
     </p>
-    <div class="mt-10 space-y-7">
+    <div class="mt-10 border-t border-rule">
       {pubs.map(pub => <Pub pub={pub} />)}
     </div>
   </section>
