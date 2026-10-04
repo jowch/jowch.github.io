@@ -2,21 +2,6 @@
 import { ME, type Pub } from '../lib/pubs'
 interface Props { pub: Pub }
 const { pub } = Astro.props
-
-// Long consortium-style author lists collapse to the first few, me, and the
-// last (senior) author, with gaps marked.
-const MAX = 8
-const all = pub.authors.map((a, i) => ({ ...a, i }))
-let shown: ({ name: string; i: number } | null)[] = all
-if (all.length > MAX) {
-  const me = all.findIndex(a => ME.has(a.name))
-  const keep = new Set([0, 1, 2, all.length - 1, ...(me >= 0 ? [me] : [])])
-  shown = []
-  for (const a of all) {
-    if (keep.has(a.i)) shown.push(a)
-    else if (shown.at(-1) !== null) shown.push(null)
-  }
-}
 ---
 
 <article>
@@ -24,9 +9,9 @@ if (all.length > MAX) {
     {pub.URL ? <a href={pub.URL} class="hover:text-accent transition-colors">{pub.title}</a> : pub.title}
   </h3>
   <p class="text-[0.95rem] text-ink-2 mt-1">
-    {shown.map((a, k) => (
+    {pub.authors.map((a, k) => (
       <>
-        {a ? <span class:list={[ME.has(a.name) && 'font-semibold text-ink']}>{a.name}</span> : <span class="text-ink-3">…</span>}{k < shown.length - 1 && ', '}
+        <span class:list={[ME.has(a.name) && 'font-semibold text-ink']}>{a.name}</span>{k < pub.authors.length - 1 && ', '}
       </>
     ))}
   </p>
