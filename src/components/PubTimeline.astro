@@ -1,0 +1,23 @@
+---
+// Publications grouped by year on a vertical timeline. The year sits above its
+// entries at every width, so entries keep the full column on a phone.
+import PubEntry from './Pub.astro'
+import type { Pub } from '../lib/pubs'
+interface Props { pubs: Pub[] }
+const { pubs } = Astro.props
+
+const years = [...new Set(pubs.map(p => p.published))].sort((a, b) => b - a)
+const byYear = years.map(year => ({ year, items: pubs.filter(p => p.published === year) }))
+---
+
+<ol class="relative ml-1.5 border-l border-rule">
+  {byYear.map(({ year, items }) => (
+    <li class="relative pl-6 pb-8 last:pb-1">
+      <span aria-hidden="true" class="absolute -left-[5.5px] top-[0.45rem] size-2.5 rounded-full bg-accent ring-4 ring-paper" />
+      <p class="text-sm font-semibold tabular-nums tracking-wide text-ink-3">{year}</p>
+      <div class="mt-2 space-y-5">
+        {items.map(pub => <PubEntry pub={pub} />)}
+      </div>
+    </li>
+  ))}
+</ol>

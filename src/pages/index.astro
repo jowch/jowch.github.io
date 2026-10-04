@@ -1,0 +1,100 @@
+---
+import { readFile } from 'node:fs/promises'
+import { parse } from 'yaml'
+import { Image } from 'astro:assets'
+import { getCollection } from 'astro:content'
+import Base from '../layouts/Base.astro'
+import Stack from '../components/Stack.astro'
+import ProjectCard from '../components/ProjectCard.astro'
+import ResearchCard from '../components/ResearchCard.astro'
+import PubTimeline from '../components/PubTimeline.astro'
+import { loadPubs } from '../lib/pubs'
+import headshot from '../assets/headshot.jpg'
+
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order)
+const research = parse(await readFile('src/data/research.yml', 'utf8'))
+const allPubs = await loadPubs()
+const pubs = (allPubs.some(p => p.selected) ? allPubs.filter(p => p.selected) : allPubs).slice(0, 4)
+
+const links = [
+  { href: 'mailto:jwhc@ucla.edu', label: 'Email' },
+  { href: 'https://github.com/jowch', label: 'GitHub' },
+  { href: 'https://orcid.org/0000-0001-5283-243X', label: 'ORCID' },
+]
+---
+
+<Base flushFooter>
+  <!-- Hero -->
+  <section class="mx-auto max-w-5xl px-4 sm:px-6 pt-14 sm:pt-20 pb-12">
+    <div class="grid gap-10 md:grid-cols-[1fr_auto] md:items-center">
+      <div>
+        <p class="eyebrow">PhD student · UCLA Bioengineering</p>
+        <h1 class="display mt-4 text-[2.5rem] leading-[1.06] sm:text-[3.4rem] font-medium">
+          Innate immunity, bacteria on surfaces,{' '}
+          <em class="text-accent font-normal">and tools that make the science reproducible.</em>
+        </h1>
+        <p class="mt-6 max-w-xl text-lg text-ink-2">
+          I'm Jonathan Chen, a PhD student in Gerard Wong's lab at UCLA. I study
+          antimicrobial peptides and innate immunity, and how bacteria behave in
+          their first moments on a surface. I also build open-source tools that
+          let scientists without software training do rigorous, reproducible
+          computational work.
+        </p>
+        <div class="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
+          <a href="#research" class="inline-flex items-center gap-2 rounded-full bg-ink text-paper px-4 py-2 text-sm font-medium hover:bg-accent transition-colors">My research</a>
+          {links.map(l => <a href={l.href} class="link text-sm font-medium">{l.label}</a>)}
+        </div>
+      </div>
+      <figure class="relative hidden md:block w-52">
+        <div aria-hidden="true" class="absolute inset-0 translate-x-3 translate-y-3 rounded-2xl border-2 border-accent/50"></div>
+        <Image
+          src={headshot}
+          alt="Jonathan Chen"
+          width={416}
+          widths={[208, 416]}
+          sizes="(min-width: 640px) 208px, 176px"
+          class="relative rounded-2xl aspect-[4/5] object-cover dark:brightness-90"
+          loading="eager"
+        />
+      </figure>
+    </div>
+  </section>
+
+  <!-- Research -->
+  <section id="research" class="mx-auto max-w-5xl px-4 sm:px-6 pt-6 scroll-mt-20">
+    <h2 class="eyebrow">Research</h2>
+    <div class="mt-4 grid gap-4 md:grid-cols-2">
+      {research.map((area: any) => <ResearchCard area={area} pubs={allPubs} />)}
+    </div>
+  </section>
+
+  <!-- Publications -->
+  <section id="publications" class="mx-auto max-w-5xl px-4 sm:px-6 pt-14 scroll-mt-20">
+    <div class="flex items-baseline justify-between gap-4">
+      <h2 class="eyebrow">Selected publications</h2>
+      <a href="/publications/" class="link text-sm font-medium">All publications</a>
+    </div>
+    <div class="mt-5">
+      <PubTimeline pubs={pubs} />
+    </div>
+  </section>
+
+  <!-- Tools -->
+  <section id="building" class="mt-20 border-y border-rule bg-paper-2/60 scroll-mt-14">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 py-14">
+      <p class="eyebrow">What I'm building</p>
+      <h2 class="display mt-3 text-3xl sm:text-[2.4rem] leading-tight font-medium max-w-2xl">From a question to a result anyone can rerun.</h2>
+      <p class="mt-4 max-w-2xl text-ink-2">
+        Agents can now help a scientist try an analysis they couldn't have written
+        alone. Each project makes one step of that path easier while keeping the
+        work in real code you can read, rerun and share.
+      </p>
+      <div class="mt-10">
+        <Stack />
+      </div>
+      <div class="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        {projects.map(p => <ProjectCard project={p} compact />)}
+      </div>
+    </div>
+  </section>
+</Base>

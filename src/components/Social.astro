@@ -1,0 +1,23 @@
+---
+interface Props { class?: string }
+const links = [
+  { href: 'mailto:jwhc@ucla.edu', label: 'Email', d: 'M3 6.5A1.5 1.5 0 0 1 4.5 5h15A1.5 1.5 0 0 1 21 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11Zm1.6.3 7.4 5.6 7.4-5.6', stroke: true },
+  { href: 'https://github.com/jowch', label: 'GitHub', d: 'M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z' },
+  { href: 'https://www.linkedin.com/in/jowch/', label: 'LinkedIn', d: 'M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4V21H3V9.75Zm6.5 0h3.83v1.54h.06c.53-1.01 1.84-2.07 3.79-2.07 4.05 0 4.8 2.66 4.8 6.13V21h-4v-5.02c0-1.2-.02-2.74-1.67-2.74-1.67 0-1.93 1.3-1.93 2.65V21h-4V9.75Z' },
+  { href: 'https://orcid.org/0000-0001-5283-243X', label: 'ORCID', d: 'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20ZM8.1 7.1a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8Zm-.7 2.7h1.4v7.3H7.4V9.8Zm3.4 0h3.1c2.9 0 4.2 2.1 4.2 3.65 0 1.7-1.32 3.65-4.2 3.65h-3.1V9.8Zm1.4 1.27v4.77h1.6c2.2 0 2.84-1.58 2.84-2.39 0-1.3-.84-2.38-2.85-2.38h-1.6Z' },
+]
+const { class: cls = '' } = Astro.props
+---
+
+<ul class:list={['flex items-center gap-3', cls]}>
+  {links.map(({ href, label, d, stroke }) => (
+    <li>
+      <a href={href} class="text-ink-3 hover:text-accent transition-colors block p-1" aria-label={label} title={label}>
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"
+          fill={stroke ? 'none' : 'currentColor'} stroke={stroke ? 'currentColor' : 'none'} stroke-width="1.7" stroke-linejoin="round">
+          <path d={d} />
+        </svg>
+      </a>
+    </li>
+  ))}
+</ul>

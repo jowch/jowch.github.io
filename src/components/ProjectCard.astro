@@ -1,0 +1,33 @@
+---
+import type { CollectionEntry } from 'astro:content'
+interface Props { project: CollectionEntry<'projects'>; compact?: boolean }
+const { project, compact = false } = Astro.props
+const { id, data } = project
+---
+
+<a
+  href={`/projects/${id}/`}
+  class:list={[
+    'group relative flex flex-col rounded-xl border border-rule bg-paper transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-12px_var(--project)] hover:border-[var(--project)]',
+    compact ? 'gap-2 p-4' : 'gap-3 p-5',
+  ]}
+  style={`--project: ${data.accent}`}
+>
+  <div class="flex items-center gap-3">
+    <img src={data.logo} alt="" width="36" height="36" class:list={['size-9 object-contain', data.logoDark && 'dark:hidden']} />
+    {data.logoDark && <img src={data.logoDark} alt="" width="36" height="36" class="size-9 object-contain hidden dark:block" />}
+    <div>
+      <h3 class="display text-xl font-semibold leading-tight">{data.name}</h3>
+      <p class="text-[0.72rem] font-semibold uppercase tracking-wider text-ink-3">{data.language}</p>
+    </div>
+  </div>
+  {compact ? (
+    <p class="text-[0.92rem] leading-snug text-ink-2">{data.tagline}</p>
+  ) : (
+    <>
+      <p class="font-medium leading-snug">{data.tagline}</p>
+      <p class="text-[0.95rem] text-ink-2">{data.summary}</p>
+      <span class="mt-auto pt-1 text-sm font-medium text-[var(--project)] group-hover:underline underline-offset-4">Read more →</span>
+    </>
+  )}
+</a>

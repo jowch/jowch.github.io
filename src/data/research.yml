@@ -1,0 +1,9 @@
+# Research areas on the home page. Set `image` (a path under public/) to show a
+# figure beside an area.
+# `papers` lists DOIs from pubs.yml to link under the area.
+- title: Antimicrobial peptides and innate immunity
+  summary: How antimicrobial peptides and the innate immune system shape autoimmunity and development.
+  papers: [10.1073/pnas.2521841122, 10.1073/pnas.2300644120]
+- title: Bacteria meeting a surface
+  summary: What *Pseudomonas aeruginosa* and *Vibrio cholerae* do in their first moments on a surface, before a biofilm forms.
+  papers: [10.1038/s41564-025-02087-4, 10.1073/pnas.2112226119]
