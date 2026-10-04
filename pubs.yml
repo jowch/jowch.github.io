@@ -312,6 +312,7 @@
       first: true
   URL: https://doi.org/10.7936/tabn-yr37
   published: 2020
+  type: thesis
   donotcheck: true
 - title: Exploring Unfairness and Bias in Data
   publisher: Proceedings of the AAAI Conference on Artificial Intelligence

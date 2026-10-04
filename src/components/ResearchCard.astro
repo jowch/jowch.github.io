@@ -1,10 +1,9 @@
 ---
 import { marked } from 'marked'
-import ResearchArt from './ResearchArt.astro'
 import type { Pub } from '../lib/pubs'
 
 interface Props {
-  area: { title: string; summary: string; art?: 'membrane' | 'surface'; image?: string; papers?: string[] }
+  area: { title: string; summary: string; image?: string; papers?: string[] }
   pubs: Pub[]
 }
 const { area, pubs } = Astro.props
@@ -13,11 +12,11 @@ const surname = (p: Pub) => p.authors[0]?.name.split(' ').at(-1)
 ---
 
 <article class="flex gap-5 rounded-2xl border border-rule bg-paper p-5">
-  <div class="size-24 sm:size-28 shrink-0 overflow-hidden rounded-xl">
-    {area.image
-      ? <img src={area.image} alt="" class="size-full object-cover" loading="lazy" />
-      : <ResearchArt kind={area.art ?? 'surface'} />}
-  </div>
+  {area.image && (
+    <div class="size-24 sm:size-28 shrink-0 overflow-hidden rounded-xl">
+      <img src={area.image} alt="" class="size-full object-cover" loading="lazy" />
+    </div>
+  )}
   <div class="min-w-0">
     <h3 class="display text-[1.4rem] font-semibold leading-tight">{area.title}</h3>
     <p class="mt-2 text-[0.97rem] text-ink-2" set:html={marked.parseInline(area.summary)} />

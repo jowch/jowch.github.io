@@ -17,7 +17,6 @@ const allPubs = await loadPubs()
 const pubs = (allPubs.some(p => p.selected) ? allPubs.filter(p => p.selected) : allPubs).slice(0, 4)
 
 const links = [
-  { href: '/cv/', label: 'CV' },
   { href: 'mailto:jwhc@ucla.edu', label: 'Email' },
   { href: 'https://github.com/jowch', label: 'GitHub' },
   { href: 'https://orcid.org/0000-0001-5283-243X', label: 'ORCID' },

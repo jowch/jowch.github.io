@@ -13,7 +13,7 @@ on every push to `main`.
 |---|---|
 | Research areas on the home page | [`src/data/research.yml`](src/data/research.yml) |
 | Publications | [`pubs.yml`](pubs.yml): add a `doi:` line, then `npm run pubs`. Papers without a DOI can be written out in full (title, authors, publisher, published) |
-| CV page | [`src/data/cv.yml`](src/data/cv.yml) |
+| CV page (hidden until updated; restore by renaming `src/pages/_cv.astro` to `cv.astro` and re-adding the nav link) | [`src/data/cv.yml`](src/data/cv.yml) |
 | A project's landing page | [`src/content/projects/<name>.md`](src/content/projects) |
 | Colors and fonts | [`src/styles/global.css`](src/styles/global.css) |
 

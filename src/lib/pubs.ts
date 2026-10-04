@@ -10,6 +10,7 @@ export interface Pub {
   URL?: string
   published: number
   selected?: boolean
+  type?: 'thesis'
 }
 
 // Names that are me, for bolding in author lists
