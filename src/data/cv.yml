@@ -1,0 +1,53 @@
+# Source for /cv/. Last synced from jowch/vitae (2022); needs updating.
+updated: 2022-08
+interests: >-
+  Innate immunity and antimicrobial peptides in autoimmunity and development;
+  early bacterial surface sensing before biofilm formation; machine learning
+  and software tools for reproducible science.
+education:
+  - where: University of California, Los Angeles
+    what: Ph.D. student, Bioengineering
+    when: 2020 – present
+    detail: Advisor, Gerard C. L. Wong
+  - where: Washington University in St. Louis
+    what: B.S. and M.S., Computer Science; second major in Genomics and Computational Biology; minor in Bioinformatics
+    when: 2020
+    detail: "Thesis: Rapid Generalized Psychometric Function Estimation with Active Learning. Advisor, Dennis Barbour"
+experience:
+  - group: Research
+    items:
+      - role: Graduate Student
+        org: Laboratory of Sensory Neuroscience and Neuroengineering, WashU
+        when: 2018 – 2020
+        points:
+          - Developed active, multi-dimensional psychometric function estimation with Gaussian processes and Bayesian active learning, including a generalized likelihood for guess and lapse rates.
+      - role: Student Researcher
+        org: Ding Lab, WashU
+        when: 2017
+        points:
+          - Mined 11,000 tumor genomes to study rare copy number variants and mutagenesis mechanisms, and scaled the pipeline to an LSF cluster.
+  - group: Teaching
+    items:
+      - role: Head Teaching Assistant
+        org: Introduction to Data Science; Cloud Computing and Big Data, WashU
+        when: 2018 – 2020
+        points:
+          - Coordinated 10–15 undergraduate TAs for courses of 120+ students and wrote homework and lab assignments.
+      - role: Teaching Assistant
+        org: Computer Science II, WashU
+        when: 2017 – 2018
+  - group: Industry
+    items:
+      - role: Software Engineering Intern
+        org: IBM, San Jose
+        when: 2019
+        points:
+          - Built the React interface for an AI pipeline component sharing platform backed by Kubeflow.
+      - role: Full Stack Developer
+        org: Stentor Technology, Walnut Creek
+        when: 2017
+        points:
+          - Led a token exchange system on Ethereum, a React Native client app, and the Node.js APIs between them.
+awards:
+  - Outstanding Senior Award, Computer Science and Engineering, WashU (2019)
+  - Dean's List (2018)

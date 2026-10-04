@@ -1,0 +1,92 @@
+---
+import { Image } from 'astro:assets'
+import { getCollection } from 'astro:content'
+import Base from '../layouts/Base.astro'
+import Social from '../components/Social.astro'
+import Stack from '../components/Stack.astro'
+import ProjectCard from '../components/ProjectCard.astro'
+import Pub from '../components/Pub.astro'
+import { Content as About } from '../data/about.md'
+import { loadPubs } from '../lib/pubs'
+import headshot from '../assets/headshot.jpg'
+
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order)
+const pubs = (await loadPubs()).slice(0, 3)
+---
+
+<Base>
+  <!-- Hero -->
+  <section class="mx-auto max-w-5xl px-4 sm:px-6 pt-14 sm:pt-20 pb-16">
+    <div class="grid gap-10 md:grid-cols-[1fr_auto] md:items-center">
+      <div>
+        <p class="eyebrow">PhD student · UCLA Bioengineering</p>
+        <h1 class="display mt-4 text-[2.5rem] leading-[1.05] sm:text-[3.6rem] font-medium">
+          Innate immunity, bacteria on surfaces,{' '}
+          <em class="text-accent font-normal">and tools that make the science reproducible.</em>
+        </h1>
+        <p class="mt-6 max-w-xl text-lg text-ink-2">
+          I'm Jonathan Chen. I study antimicrobial peptides and innate immunity,
+          and how bacteria behave in their first moments on a surface. I also build
+          open-source tools that let scientists without software training do
+          rigorous, reproducible computational work.
+        </p>
+        <div class="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
+          <a href="/projects/" class="inline-flex items-center gap-2 rounded-full bg-ink text-paper px-4 py-2 text-sm font-medium hover:bg-accent transition-colors">See the projects <span aria-hidden="true">→</span></a>
+          <a href="/cv/" class="link text-sm font-medium">CV</a>
+          <Social />
+        </div>
+      </div>
+      <figure class="relative mx-auto md:mx-0 w-44 sm:w-56">
+        <div aria-hidden="true" class="absolute inset-0 translate-x-3 translate-y-3 rounded-2xl border-2 border-accent/60"></div>
+        <Image
+          src={headshot}
+          alt="Jonathan Chen"
+          width={448}
+          widths={[224, 448]}
+          sizes="(min-width: 640px) 224px, 176px"
+          class="relative rounded-2xl aspect-[4/5] object-cover dark:brightness-90"
+          loading="eager"
+        />
+      </figure>
+    </div>
+  </section>
+
+  <!-- Through-line -->
+  <section class="border-y border-rule bg-paper-2/60">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 py-12">
+      <p class="eyebrow">What I'm building</p>
+      <h2 class="display mt-3 text-3xl sm:text-4xl font-medium max-w-2xl">From a question to a result anyone can rerun.</h2>
+      <p class="mt-4 max-w-2xl text-ink-2">
+        Agents can now help a scientist try an analysis they couldn't have written
+        alone. Each project below makes one step of that path easier while keeping
+        the work in real code you can read, rerun and share.
+      </p>
+      <div class="mt-10">
+        <Stack />
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-5xl px-4 sm:px-6 pt-14">
+    <div class="grid gap-4 sm:grid-cols-2">
+      {projects.map(p => <ProjectCard project={p} />)}
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="mx-auto max-w-5xl px-4 sm:px-6 pt-20 grid gap-8 md:grid-cols-[12rem_1fr]">
+    <div><p class="eyebrow md:pt-2">About</p></div>
+    <div class="prose-site max-w-prose">
+      <About />
+    </div>
+  </section>
+
+  <!-- Publications -->
+  <section class="mx-auto max-w-5xl px-4 sm:px-6 pt-16 grid gap-8 md:grid-cols-[12rem_1fr]">
+    <div><p class="eyebrow md:pt-1">Selected publications</p></div>
+    <div class="max-w-prose space-y-6">
+      {pubs.map(pub => <Pub pub={pub} />)}
+      <a href="/publications/" class="link text-sm font-medium inline-block">All publications →</a>
+    </div>
+  </section>
+</Base>

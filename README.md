@@ -2,24 +2,43 @@
 
 ![Status](https://github.com/jowch/jowch.github.io/actions/workflows/pages.yml/badge.svg)
 
-This is my personal website. It was built with automation in mind. This is a
-static site is built with [Next.js](https://nextjs.org). The styles are built
-with [Tailwind CSS](https://tailwindcss.com). This combination results in a very
-no-fuss workflow that I would recommend anybody who wants to make a website for
-themselves but doesn't want to spend all of their time doing it.
+My personal site and the landing pages for my open-source projects. Built with
+[Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com), and
+deployed to GitHub Pages by [`.github/workflows/pages.yml`](.github/workflows/pages.yml)
+on every push to `main`.
 
-I've designed the website as a template with the actual content specified by
-[`about.md`](about.md) and [`pubs.yml`](pubs.yml). These are the only files that
-need to be changed when making small updates. They are pulled into the site at
-build time. The publications (specified by [DOI](https://www.doi.org)) are
-filled in and updated automatically by calling the [Crossref
-API](https://www.crossref.org).
+## Where things live
 
-The GitHub actions workflow specified in
-[`.github/workflows/pages.yml`](.github/workflows/pages.yml) automatically
-starts a build process on commits to the main branch of the repository. It will
-commit any changes to the [`pubs.yml`](pubs.yml) file and then deploy to [GitHub
-Pages](https://pages.github.com).
+| To change | Edit |
+|---|---|
+| About text on the home page | [`src/data/about.md`](src/data/about.md) |
+| Publications | [`pubs.yml`](pubs.yml): add a `doi:` line, then `npm run pubs` |
+| CV page | [`src/data/cv.yml`](src/data/cv.yml) |
+| A project's landing page | [`src/content/projects/<name>.md`](src/content/projects) |
+| Colors and fonts | [`src/styles/global.css`](src/styles/global.css) |
 
-This set up allows for low energy updates to the website, which means more time
-spent working on research!
+`npm run pubs` looks up any unresolved DOI on [Crossref](https://www.crossref.org)
+and fills in the title, authors, venue and year. CI runs it on every build too,
+so a bare DOI still appears on the site, but committing the resolved file keeps
+builds reproducible.
+
+Adding a project means adding one Markdown file to `src/content/projects/`; the
+projects index, the home page cards and the stack diagram pick it up from its
+frontmatter.
+
+## Project docs
+
+Reference docs generated from code stay in each project's repository and
+publish from its own `gh-pages` branch, which GitHub serves under this domain
+(for example [jowch.github.io/Masque.jl](https://jowch.github.io/Masque.jl/stable/)).
+Landing pages live here under `/projects/` so the two never collide.
+
+## Develop
+
+```
+npm install
+npm run dev      # http://localhost:4321
+npm run build    # static site in dist/
+```
+
+Requires Node 22.12 or newer.

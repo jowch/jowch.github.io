@@ -1,0 +1,22 @@
+---
+import { ME, type Pub } from '../lib/pubs'
+interface Props { pub: Pub }
+const { pub } = Astro.props
+---
+
+<article class="group grid grid-cols-[3.25rem_1fr] gap-x-4">
+  <div class="font-mono text-sm text-ink-3 pt-0.5">{pub.published}</div>
+  <div>
+    <h3 class="font-medium leading-snug">
+      <a href={pub.URL} class="hover:text-accent transition-colors">{pub.title}</a>
+    </h3>
+    <p class="text-[0.92rem] text-ink-2 mt-1">
+      {pub.authors.map((a, i) => (
+        <>
+          <span class:list={[ME.has(a.name) && 'font-semibold text-ink']}>{a.name}</span>{i < pub.authors.length - 1 && ', '}
+        </>
+      ))}
+    </p>
+    {pub.publisher && <p class="text-[0.92rem] italic text-ink-3 mt-0.5">{pub.publisher}</p>}
+  </div>
+</article>

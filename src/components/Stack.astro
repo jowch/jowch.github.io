@@ -1,0 +1,50 @@
+---
+// The through-line: each project sits at one layer between a scientist's
+// question and a result someone else can rerun.
+import { getCollection } from 'astro:content'
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order)
+const at = (layer: string) => projects.filter(p => p.data.layer === layer)
+
+const steps = [
+  { kind: 'end', label: 'A question', note: 'in your own words' },
+  { kind: 'layer', layer: 'agent', label: 'An agent', note: 'that writes real code with you' },
+  { kind: 'layer', layer: 'notebook', label: 'A reactive notebook', note: 'where the code always matches the output' },
+  { kind: 'layer', layer: 'figure', label: 'Interactive figures', note: 'that readers can keep questioning' },
+  { kind: 'end', label: 'A result', note: 'anyone can rerun' },
+]
+---
+
+<ol class="relative grid gap-0 md:grid-cols-5">
+  {steps.map((s, i) => (
+    <li class="relative flex md:flex-col gap-4 md:gap-3 pb-6 md:pb-0 md:pr-4 last:pb-0">
+      {/* connector */}
+      {i < steps.length - 1 && (
+        <span aria-hidden="true" class="absolute left-[0.6rem] top-6 bottom-0 w-px md:left-6 md:right-0 md:top-[0.6rem] md:bottom-auto md:w-auto md:h-px bg-[repeating-linear-gradient(to_bottom,var(--ink-3)_0_4px,transparent_4px_8px)] md:bg-[repeating-linear-gradient(to_right,var(--ink-3)_0_4px,transparent_4px_8px)] opacity-60" />
+      )}
+      <span
+        aria-hidden="true"
+        class:list={[
+          'relative z-10 mt-0.5 size-5 shrink-0 rounded-full border-2',
+          s.kind === 'end' ? 'border-ink-3 bg-paper' : 'border-accent bg-accent',
+        ]}
+      />
+      <div class="min-w-0">
+        <p class="font-semibold leading-tight">{s.label}</p>
+        <p class="text-sm text-ink-3 mt-0.5">{s.note}</p>
+        {s.layer && (
+          <div class="mt-2 flex flex-wrap gap-1.5">
+            {at(s.layer).map(p => (
+              <a
+                href={`/projects/${p.id}/`}
+                class="inline-flex items-center gap-1.5 rounded-full border border-rule bg-paper px-2.5 py-0.5 font-mono text-xs hover:border-[var(--project)] hover:text-[var(--project)] transition-colors"
+                style={`--project: ${p.data.accent}`}
+              >
+                <span class="size-1.5 rounded-full bg-[var(--project)]" />{p.data.name}
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+    </li>
+  ))}
+</ol>

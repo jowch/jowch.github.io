@@ -1,0 +1,80 @@
+---
+import { readFile } from 'node:fs/promises'
+import { parse } from 'yaml'
+import Base from '../layouts/Base.astro'
+import Pub from '../components/Pub.astro'
+import { loadPubs } from '../lib/pubs'
+
+const cv = parse(await readFile('src/data/cv.yml', 'utf8'))
+const pubs = await loadPubs()
+const PDF = 'https://raw.githubusercontent.com/jowch/vitae/master/cv.pdf'
+---
+
+<Base title="CV">
+  <section class="mx-auto max-w-3xl px-4 sm:px-6 pt-14">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <p class="eyebrow">Curriculum vitae</p>
+        <h1 class="display mt-3 text-4xl sm:text-5xl font-medium">Jonathan W. Chen</h1>
+      </div>
+      <a href={PDF} class="inline-flex items-center gap-2 rounded-full border border-ink/80 px-4 py-1.5 text-sm font-medium hover:bg-ink hover:text-paper transition-colors">Download PDF</a>
+    </div>
+
+    <div class="mt-12 space-y-12">
+      <section>
+        <h2 class="eyebrow mb-3">Research interests</h2>
+        <p class="text-ink-2">{cv.interests}</p>
+      </section>
+
+      <section>
+        <h2 class="eyebrow mb-4">Education</h2>
+        <ul class="space-y-5">
+          {cv.education.map((e: any) => (
+            <li class="grid sm:grid-cols-[1fr_auto] gap-x-6">
+              <div>
+                <p class="font-semibold">{e.where}</p>
+                <p>{e.what}</p>
+                {e.detail && <p class="text-sm text-ink-3 mt-0.5">{e.detail}</p>}
+              </div>
+              <p class="font-mono text-sm text-ink-3 sm:text-right order-first sm:order-none">{e.when}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {cv.experience.map((g: any) => (
+        <section>
+          <h2 class="eyebrow mb-4">{g.group}</h2>
+          <ul class="space-y-5">
+            {g.items.map((x: any) => (
+              <li class="grid sm:grid-cols-[1fr_auto] gap-x-6">
+                <div>
+                  <p class="font-semibold">{x.role}</p>
+                  <p class="text-ink-2">{x.org}</p>
+                  {x.points && (
+                    <ul class="mt-1.5 list-disc pl-5 text-[0.95rem] text-ink-2 space-y-1">
+                      {x.points.map((pt: string) => <li>{pt}</li>)}
+                    </ul>
+                  )}
+                </div>
+                <p class="font-mono text-sm text-ink-3 sm:text-right order-first sm:order-none">{x.when}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+
+      <section>
+        <h2 class="eyebrow mb-4">Publications</h2>
+        <div class="space-y-6">{pubs.map(pub => <Pub pub={pub} />)}</div>
+      </section>
+
+      <section>
+        <h2 class="eyebrow mb-3">Awards</h2>
+        <ul class="list-disc pl-5 text-ink-2 space-y-1">
+          {cv.awards.map((a: string) => <li>{a}</li>)}
+        </ul>
+      </section>
+    </div>
+  </section>
+</Base>

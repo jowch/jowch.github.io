@@ -1,0 +1,23 @@
+---
+import type { CollectionEntry } from 'astro:content'
+interface Props { project: CollectionEntry<'projects'> }
+const { id, data } = Astro.props.project
+---
+
+<a
+  href={`/projects/${id}/`}
+  class="group relative flex flex-col gap-3 rounded-xl border border-rule bg-paper p-5 transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-12px_var(--project)] hover:border-[var(--project)]"
+  style={`--project: ${data.accent}`}
+>
+  <div class="flex items-center gap-3">
+    <img src={data.logo} alt="" width="36" height="36" class:list={['size-9 object-contain', data.logoDark && 'dark:hidden']} />
+    {data.logoDark && <img src={data.logoDark} alt="" width="36" height="36" class="size-9 object-contain hidden dark:block" />}
+    <div>
+      <h3 class="display text-xl font-semibold leading-tight">{data.name}</h3>
+      <p class="font-mono text-[0.7rem] uppercase tracking-wider text-ink-3">{data.language}</p>
+    </div>
+  </div>
+  <p class="font-medium leading-snug">{data.tagline}</p>
+  <p class="text-[0.95rem] text-ink-2">{data.summary}</p>
+  <span class="mt-auto pt-1 font-mono text-xs text-[var(--project)] group-hover:underline underline-offset-4">Read more →</span>
+</a>
